@@ -1,8 +1,13 @@
 package com.antsoft.reactivo.repositorio;
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+import org.springframework.data.repository.reactive.ReactiveSortingRepository;
+
 import com.antsoft.reactivo.modelo.Persona;
 
-public interface PersonaRepository extends ReactiveMongoRepository<Persona, String> {
+import reactor.core.publisher.Mono;
+
+public interface PersonaRepository extends ReactiveSortingRepository<Persona, String> {
+	
+	Mono<Persona>findByNombre(String nombre);
 
 }

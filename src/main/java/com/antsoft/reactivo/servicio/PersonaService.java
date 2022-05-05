@@ -9,4 +9,6 @@ public interface PersonaService {
 
 	Mono<Persona> crearPersona(Persona persona);
 	Flux<Persona> listarTodas();
+	Mono<Persona> buscarPorId(String id);
+	Mono<Persona> buscarPornombre(String nombre);
 }

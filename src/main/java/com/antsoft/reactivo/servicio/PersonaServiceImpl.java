@@ -25,4 +25,14 @@ public class PersonaServiceImpl implements PersonaService {
 		return personaRepository.findAll();
 	}
 
+	@Override
+	public Mono<Persona> buscarPorId(String id) {
+		return personaRepository.findById(id);
+	}
+
+	@Override
+	public Mono<Persona> buscarPornombre(String nombre) {
+		return personaRepository.findByNombre(nombre);
+	}
+
 }
